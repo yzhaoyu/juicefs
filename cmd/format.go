@@ -275,6 +275,7 @@ func doTesting(store object.ObjectStorage, key string, data []byte) error {
 					store, err2, err)
 			}
 		}
+		logger.Infof("zhelima")
 		if err := store.Put(key, bytes.NewReader(data)); err != nil {
 			return fmt.Errorf("Failed to put: %s", err)
 		}
