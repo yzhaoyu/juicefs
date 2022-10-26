@@ -36,6 +36,7 @@ func (s *sharded) String() string {
 }
 
 func (s *sharded) Create() error {
+	logger.Infof("let me see sharding create")
 	for _, o := range s.stores {
 		if err := o.Create(); err != nil {
 			return err
@@ -198,6 +199,7 @@ func NewSharded(name, endpoint, ak, sk, token string, shards int) (ObjectStorage
 		if strings.HasSuffix(ep, "%!(EXTRA int=0)") {
 			return nil, fmt.Errorf("can not generate different endpoint using %s", endpoint)
 		}
+		logger.Info("qwwe")
 		stores[i], err = CreateStorage(name, ep, ak, sk, token)
 		if err != nil {
 			return nil, err

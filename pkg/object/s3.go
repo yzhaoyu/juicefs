@@ -69,6 +69,7 @@ func isExists(err error) bool {
 }
 
 func (s *s3client) Create() error {
+	logger.Infof("s3 create")
 	if _, err := s.List("", "", "", 1); err == nil {
 		return nil
 	}

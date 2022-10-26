@@ -151,6 +151,7 @@ func Register(name string, register Creator) {
 }
 
 func CreateStorage(name, endpoint, accessKey, secretKey, token string) (ObjectStorage, error) {
+	logger.Info("seifrweh")
 	f, ok := storages[name]
 	if ok {
 		logger.Debugf("Creating %s storage at endpoint %s", name, endpoint)
