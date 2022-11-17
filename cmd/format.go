@@ -43,6 +43,7 @@ import (
 	"github.com/juicedata/juicefs/pkg/object"
 	osync "github.com/juicedata/juicefs/pkg/sync"
 	"github.com/juicedata/juicefs/pkg/version"
+	"github.com/pingcap/log"
 	"github.com/urfave/cli/v2"
 )
 
@@ -443,10 +444,12 @@ func format(c *cli.Context) error {
 	}
 	logger.Infof("Data use %s", blob)
 	if os.Getenv("JFS_NO_CHECK_OBJECT_STORAGE") == "" {
+		log.Info("uwedhweu")
 		if err := test(blob); err != nil {
 			logger.Fatalf("Storage %s is not configured correctly: %s", blob, err)
 		}
 		if create {
+			log.Info("21821ysadmsd")
 			if objs, err := osync.ListAll(blob, "", ""); err == nil {
 				for o := range objs {
 					if o == nil {
