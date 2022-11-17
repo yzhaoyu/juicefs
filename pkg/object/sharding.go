@@ -36,6 +36,7 @@ func (s *sharded) String() string {
 }
 
 func (s *sharded) Create() error {
+	logger.Infof("sharded Create")
 	for _, o := range s.stores {
 		if err := o.Create(); err != nil {
 			return err
